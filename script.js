@@ -11,7 +11,7 @@
     .text(data.buttonText)
     .hide();
 
-  $('.soliloquy-container').mouseenter(function(){
+  function checkImageStatus() {
 
     var $activeImg  = $('.soliloquy-active-slide').find('img');
     var goodImgPath = $activeImg.attr('src');
@@ -32,13 +32,19 @@
 
     img.onerror = function(){
 
-      console.log('No image found');
+      console.log({
+        'status':'No image found',
+        'imgPath': badImgPath
+      });
+
       $button.hide();
     };
 
     img.src = badImgPath;
 
-  });
+  }
+
+  $('.soliloquy-container').hover(checkImageStatus, checkImageStatus);
 
   $button.click(function (e){
 
