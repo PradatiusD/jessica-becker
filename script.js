@@ -1,5 +1,5 @@
 // http://www.jessicabeckerdesigns.com/?p=938&preview=true#
-(function($){
+jQuery(document).ready(function($){
 
   var $button = $('.button');
   var data = {
@@ -62,4 +62,4 @@
       $button.text(data.buttonText);
   });
 
-})(jQuery);
+});
